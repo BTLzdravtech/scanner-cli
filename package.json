@@ -43,7 +43,8 @@
     "test:unit": "NODE_ENV=testing npx mocha 'lib/**/*-unit.js' -R 'spec' testutils.js"
   },
   "bin": {
-    "hawkeye": "./bin/hawkeye"
+    "hawkeye": "./bin/hawkeye",
+    "hawkeye-scan": "./bin/hawkeye-scan"
   },
   "dependencies": {
     "colors": "^1.4.0",
