@@ -30,9 +30,14 @@ program
     'Shows the code the module uses for reporting, useful for ignoring certain false positives', rc.withShowCode.bind(rc))
   .option('-g, --staged',
     'Scan only git-staged files.', rc.withStaged.bind(rc))
+  .option('-o, --overcommit',
+    'Overcommit mode.', rc.withOvercommit.bind(rc))
   .parse(process.argv)
 
-if (!rc.target) {
+if (rc.overcommit) {
+  global.OVERCOMMIT = true
+  rc.overcommitFiles = program.args
+} else if (!rc.target) {
   rc.withTarget(process.env.PWD || '/target')
 }
 
