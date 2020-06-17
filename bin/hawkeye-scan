@@ -37,6 +37,7 @@ program
 if (rc.overcommit) {
   global.OVERCOMMIT = true
   rc.overcommitFiles = program.args
+  rc.checkRc()
 } else if (!rc.target) {
   rc.withTarget(process.env.PWD || '/target')
 }
